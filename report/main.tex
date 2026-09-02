@@ -1,0 +1,111 @@
+\documentclass[12pt]{extarticle}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{newtxtext,newtxmath, times, ragged2e, enumitem, pdfpages}
+
+\usepackage{float}
+\usepackage{setspace}
+\onehalfspacing
+\usepackage{times,fancyhdr,lastpage}
+ \usepackage[a4paper, margin=1in]{geometry}
+\usepackage{amsmath,amssymb,enumerate,amsbsy,amsthm,graphicx,titlesec,color}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{mathtools}
+
+\definecolor{codebg}{rgb}{1.0,0.98,0.92}
+\definecolor{codeframe}{rgb}{0.8,0.8,0.8}
+\definecolor{keywordcolor}{rgb}{0.2,0.2,0.6}
+\definecolor{stringcolor}{rgb}{0.2,0.5,0.2}
+\definecolor{commentcolor}{rgb}{0.5,0.5,0.5}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{codebg},   
+    commentstyle=\color{commentcolor},
+    keywordstyle=\color{keywordcolor}\bfseries,
+    stringstyle=\color{stringcolor},
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    rulecolor=\color{codeframe},
+    showstringspaces=false,
+    tabsize=4,
+    captionpos=b
+}
+
+\lstset{style=mystyle}
+
+ % \linespread{1.5}
+% \pagestyle{fancy}
+
+        
+  
+% Set No indentation
+\setlength\parindent{0pt}
+
+% Environments
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{xca}[theorem]{Exercise}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem*{note}{Note}
+
+%  \numberwithin{equation}{section}
+ 
+% \titleformat{\section}
+%   {\normalfont\Large\bfseries }{\textbf{Section \thesection}\;\;}
+%   {0em}{}
+  
+   % \cfoot{\fontsize{11pt}{11pt}\selectfont{Page \thepage\ of \pageref{LastPage}}}
+  
+
+\title{Tourism Demand Forecasting: SARIMA Models for Business \& Holiday Trips to Melbourne}
+\author{}
+\date{}
+
+\begin{document}
+\justifying
+\maketitle
+%Description
+\include{Q0}
+% Time Plot & Description
+\include{Q1}
+% Time Series Decomposition
+\include{Q2}
+% Correlation Structure
+\include{Q3}
+% Fit and Compare Models
+\include{Q4}
+% Forecasting
+\include{Q5}
+% Volatility Check
+\pagebreak
+\input{Q6}
+
+\vfill
+
+\centering \textbf{\Large Scope of This Report}
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|p{13.5cm}|}
+\hline
+This was a two-person project. The Business series analysis in this report --
+including the R implementation, model selection, interpretation, and report
+writing for that series -- is my own work. The Holiday series analysis
+follows the same structure and was conducted independently by a project
+partner, reproduced here for completeness and comparison. \\
+\hline
+\end{tabular}
+\end{table}
+\end{document}

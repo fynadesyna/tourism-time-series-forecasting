@@ -1,0 +1,31 @@
+\section{Data Description}
+The dataset consists of quarterly tourism trips to Melbourne, Victoria, Australia, from Quarter 1 of
+1998 to Quarter 4 of 2017. The data were extracted from the Australian domestic tourism dataset.\\
+Variables included in the dataset are:
+\begin{enumerate}
+    \item Quarter – Observation period recorded on a quarterly basis.
+    \item Region – Tourism destination region. For this project, all observations correspond to Melbourne.
+    \item State – Australian state in which the region is located. All observations correspond to Victoria.
+    \item Purpose – Purpose of travel. Only two categories are considered: Business
+and Holiday.
+\item Trips – Estimated number of tourist trips made during the corresponding quarter.
+\end{enumerate}
+
+\noindent Since all observations belong to the same region and state, the Region and State columns are constants and do not vary across the dataset. The analysis therefore focuses on the Purpose and Trips variables. \\
+We imported the dataset into $\mathbf{R}$, and separated into two individual time series objects.\\
+The $\textbf{Business series}$, denoted $\textbf{y1}$, consists of 80 quarterly observations from 1998 Q1 to 2017 Q4, with values ranging from 312 to 704.\\
+The $\textbf{Holiday series}$, denoted $\textbf{y2}$, also consists of 80 quarterly observations over the same period, with values ranging from 325 to 806.\\
+Both series were constructed as quarterly time series objects in $\mathbf{R}$. The two series are analysed separately throughout this report, with comparisons drawn where appropriate.\\
+
+\begin{lstlisting}[language=R]
+y1 <- ts(tourism$Trips[tourism$Purpose == "Business"], 
+         start = c(1998, 1), frequency = 4)
+y2 <- ts(tourism$Trips[tourism$Purpose == "Holiday"], 
+         start = c(1998, 1), frequency = 4)
+summary(y1)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  311.8   418.5   484.0   478.0   511.6   704.1 
+summary(y2)
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  324.8   422.7   498.1   507.3   594.7   806.2 
+\end{lstlisting}

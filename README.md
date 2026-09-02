@@ -37,7 +37,7 @@ tourism-time-series-forecasting/
 │   ├── tourism_sarima_analysis_reproducible.R    # Fixed paths + figure export (see note below)
 ├── report/
 │   ├── main.tex, Q0.tex – Q6.tex                 # LaTeX source, by section
-│   └── README.md                                 # Compile instructions
+│   └── fig/                                      # Figures for the report, compiled by R
 ├── docs/
 │   ├── Tourism_SARIMA_Forecasting_Report.pdf     # Compiled report (ready to read)
 │   └── images/                                   # README chart images

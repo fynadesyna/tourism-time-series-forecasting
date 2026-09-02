@@ -17,12 +17,6 @@ The answer is yes to both. The two series required different decomposition model
 - **No volatility clustering** in either series' residuals — an ARCH/GARCH extension isn't warranted.
 - 8-quarter-ahead forecasts (2018 Q1–2019 Q4) continue each series' trend and seasonal pattern, with prediction intervals widening from ~230 trips (Business) / ~223 trips (Holiday) at 1 quarter ahead to ~294 / ~245 trips at 8 quarters ahead.
 
-### Business Series Forecast
-![Business forecast](docs/images/business_forecast.png)
-
-### Holiday Series Forecast
-![Holiday forecast](docs/images/holiday_forecast.png)
-
 ## Tech Stack
 
 - **R**, using `forecast` and `tseries` packages for SARIMA fitting, ACF/PACF diagnostics, and forecasting
